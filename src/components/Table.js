@@ -3,7 +3,8 @@ import system from 'system-components';
 const Table = system(
    {
       is: 'table',
-      width: '100%'
+      width: '100%',
+      mb: 4
    },
    {
       tableLayout: 'fixed',

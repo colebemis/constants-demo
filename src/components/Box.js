@@ -8,6 +8,7 @@ const Box = system(
    'display',
    'space',
    'color',
+   'boxShadow',
 
    // position
    'top',

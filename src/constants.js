@@ -81,6 +81,13 @@ export const lineHeights = {
 
 export const radii = [0, 4];
 
+export const shadows = [
+   `0 0 0 1px ${colors.grayAlpha[3]}`,
+   `0 2px 4px 0 ${colors.grayAlpha[3]}`,
+   `0 4px 8px 0 ${colors.grayAlpha[3]}, 0 2px 4px 0 ${colors.grayAlpha[2]}`,
+   `0 16px 32px 0 ${colors.grayAlpha[3]}, 0 4px 16px 0 ${colors.grayAlpha[2]}`
+];
+
 export const breakpoints = ['32em', '40em', '48em', '64em'];
 
 export default {
@@ -90,5 +97,6 @@ export default {
    fontWeights,
    lineHeights,
    radii,
+   shadows,
    breakpoints
 };
