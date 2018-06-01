@@ -21,7 +21,9 @@ const Color = ({ name, value }) => (
       </div>
       <Flex flexDirection="column" ml={4}>
          <Text>{name}</Text>
-         <Text color="grayAlpha.6">{value}</Text>
+         <Text fontSize={1} color="grayAlpha.6">
+            {value}
+         </Text>
       </Flex>
    </Flex>
 );
