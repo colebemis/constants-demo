@@ -43,7 +43,7 @@ export default ({ children, data }) => (
    <div
       style={{
          display: 'flex',
-         margin: '0 auto',
+         margin: -spacing[2],
          height: '100vh',
          fontFamily: 'system-ui'
       }}
