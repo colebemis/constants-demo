@@ -3,10 +3,11 @@ import Box from '../../components/Box';
 import Flex from '../../components/Flex';
 import Text from '../../components/Text';
 import { space } from '../../constants';
+import Heading from '../../components/Heading';
 
 export default props => (
    <Box>
-      <h1>Space</h1>
+      <Heading>Space</Heading>
       <Flex flexDirection="column">
          {space.map((value, index) => (
             <Box key={value} mb={6}>

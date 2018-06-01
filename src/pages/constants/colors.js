@@ -3,6 +3,7 @@ import Box from '../../components/Box';
 import Flex from '../../components/Flex';
 import Text from '../../components/Text';
 import { colors } from '../../constants';
+import Heading from '../../components/Heading';
 
 const Color = ({ name, value }) => (
    <Flex alignItems="center" mb={1}>
@@ -25,7 +26,7 @@ const Color = ({ name, value }) => (
 
 export default props => (
    <Box>
-      <h1>Colors</h1>
+      <Heading>Colors</Heading>
       <Flex flexWrap="wrap">
          {Object.entries(colors).map(([name, value]) => (
             <Box key={name} width="50%" mb={6}>
