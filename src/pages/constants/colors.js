@@ -1,9 +1,10 @@
 import React from 'react';
 import Box from '../../components/Box';
 import Flex from '../../components/Flex';
+import Heading from '../../components/Heading';
+import Table, { Cell, Header, Row } from '../../components/Table';
 import Text from '../../components/Text';
 import { colors } from '../../constants';
-import Heading from '../../components/Heading';
 
 const Color = ({ name, value }) => (
    <Flex alignItems="center" mb={1}>
@@ -27,6 +28,7 @@ const Color = ({ name, value }) => (
 export default props => (
    <Box>
       <Heading>Colors</Heading>
+
       <Flex flexWrap="wrap">
          {Object.entries(colors).map(([name, value]) => (
             <Box key={name} width="50%" mb={6}>
@@ -44,5 +46,34 @@ export default props => (
             </Box>
          ))}
       </Flex>
+
+      <Table>
+         <Header>
+            <Row>
+               <Cell is="th">Key</Cell>
+               <Cell is="th">Value</Cell>
+            </Row>
+         </Header>
+         <tbody>
+            {Object.entries(colors).map(
+               ([name, value]) =>
+                  typeof value === 'string' ? (
+                     <Row>
+                        <Cell>colors.{name}</Cell>
+                        <Cell>{value}</Cell>
+                     </Row>
+                  ) : (
+                     value.map((color, index) => (
+                        <Row key={color}>
+                           <Cell>
+                              colors.{name}[{index}]
+                           </Cell>
+                           <Cell>{color}</Cell>
+                        </Row>
+                     ))
+                  )
+            )}
+         </tbody>
+      </Table>
    </Box>
 );

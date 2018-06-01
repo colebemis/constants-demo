@@ -4,6 +4,7 @@ import Flex from '../../components/Flex';
 import Text from '../../components/Text';
 import { space } from '../../constants';
 import Heading from '../../components/Heading';
+import Table, { Cell, Header, Row } from '../../components/Table';
 
 export default props => (
    <Box>
@@ -18,5 +19,22 @@ export default props => (
             </Box>
          ))}
       </Flex>
+
+      <Table>
+         <Header>
+            <Row>
+               <Cell is="th">Key</Cell>
+               <Cell is="th">Value</Cell>
+            </Row>
+         </Header>
+         <tbody>
+            {space.map((value, index) => (
+               <Row key={value}>
+                  <Cell>space[{index}]</Cell>
+                  <Cell>{value}</Cell>
+               </Row>
+            ))}
+         </tbody>
+      </Table>
    </Box>
 );
