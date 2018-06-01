@@ -1,12 +1,12 @@
 import React from 'react';
-import { colors, spacing, radii, lineHeights } from '../../constants';
+import { colors, space, radii, lineHeights } from '../../constants';
 
 const Color = ({ name, value }) => (
    <div
       style={{
          display: 'flex',
          alignItems: 'center',
-         marginBottom: spacing[1]
+         marginBottom: space[1]
       }}
    >
       <div
@@ -25,7 +25,7 @@ const Color = ({ name, value }) => (
          style={{
             display: 'flex',
             flexDirection: 'column',
-            marginLeft: spacing[4],
+            marginLeft: space[4],
             lineHeight: lineHeights.normal
          }}
       >
@@ -40,7 +40,7 @@ export default props => (
       <h1>Colors</h1>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
          {Object.entries(colors).map(([name, value]) => (
-            <div key={name} style={{ width: '50%', marginBottom: spacing[6] }}>
+            <div key={name} style={{ width: '50%', marginBottom: space[6] }}>
                {typeof value === 'string' ? (
                   <Color name={name} value={value} />
                ) : (

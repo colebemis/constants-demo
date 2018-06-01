@@ -1,16 +1,16 @@
 import React from 'react';
-import { fontSizes, spacing, lineHeights } from '../../constants';
+import { fontSizes, space, lineHeights } from '../../constants';
 
 export default props => (
    <div>
       <h1>Font Sizes</h1>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
          {[...fontSizes].reverse().map((fontSize, index) => (
-            <div key={fontSize} style={{ marginBottom: spacing[6] }}>
+            <div key={fontSize} style={{ marginBottom: space[6] }}>
                <span
                   style={{
                      display: 'block',
-                     marginBottom: spacing[2],
+                     marginBottom: space[2],
                      lineHeight: lineHeights.tight
                   }}
                >

@@ -1,6 +1,6 @@
 import Link from 'gatsby-link';
 import React from 'react';
-import { colors, spacing, lineHeights } from '../constants';
+import { colors, space, lineHeights } from '../constants';
 
 const kebabToTitle = str =>
    str
@@ -11,9 +11,9 @@ const kebabToTitle = str =>
 const Nav = ({ data }) => (
    <nav
       style={{
-         width: 256,
-         paddingTop: spacing[4],
-         paddingBottom: spacing[4],
+         width: 240,
+         paddingTop: space[4],
+         paddingBottom: space[4],
          backgroundColor: colors.grayAlpha[1]
       }}
    >
@@ -22,8 +22,8 @@ const Nav = ({ data }) => (
             <li
                key={file.name}
                style={{
-                  paddingLeft: spacing[5],
-                  paddingRight: spacing[5],
+                  paddingLeft: space[5],
+                  paddingRight: space[5],
                   lineHeight: lineHeights.loose
                }}
             >
@@ -43,13 +43,13 @@ export default ({ children, data }) => (
    <div
       style={{
          display: 'flex',
-         margin: -spacing[2],
+         margin: -space[2],
          height: '100vh',
          fontFamily: 'system-ui'
       }}
    >
       <Nav data={data} />
-      <main style={{ flex: '1 1 auto', overflow: 'auto', padding: spacing[4] }}>
+      <main style={{ flex: '1 1 auto', overflow: 'auto', padding: space[4] }}>
          <div style={{ margin: '0 auto', maxWidth: 800 }}>{children()}</div>
       </main>
    </div>

@@ -1,25 +1,25 @@
 import React from 'react';
-import { spacing, lineHeights } from '../../constants';
+import { space, lineHeights } from '../../constants';
 
 export default props => (
    <div>
-      <h1>Spacing</h1>
+      <h1>Space</h1>
       <div style={{ display: 'flex', flexDirection: 'column' }}>
-         {spacing.map((space, index) => (
-            <div key={space} style={{ marginBottom: spacing[6] }}>
+         {space.map((value, index) => (
+            <div key={value} style={{ marginBottom: space[6] }}>
                <span
                   style={{
                      display: 'inline-block',
-                     marginBottom: spacing[2],
+                     marginBottom: space[2],
                      lineHeight: lineHeights.tight
                   }}
                >
-                  {index} ({space}px)
+                  {index} ({value}px)
                </span>
                <div
                   style={{
-                     width: space,
-                     height: space,
+                     width: value,
+                     height: value,
                      background: 'rgba(255, 0, 0, 0.25)'
                   }}
                />
