@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 3,
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+  },
+  "prettier.arrowParens": "avoid",
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.tabWidth": 3
+}
