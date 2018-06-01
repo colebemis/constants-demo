@@ -6,6 +6,7 @@ module.exports = {
             name: `constants`,
             path: `${__dirname}/src/pages/constants`
          }
-      }
+      },
+      'gatsby-plugin-styled-components'
    ]
 };
