@@ -6,6 +6,7 @@ import Truncate from '../../components/Truncate';
 import Heading from '../../components/Heading';
 import { fontSizes } from '../../constants';
 import Table, { Cell, Header, Row } from '../../components/Table';
+import Code from '../../components/Code';
 
 export default props => (
    <Box>
@@ -34,8 +35,12 @@ export default props => (
          <tbody>
             {[...fontSizes].reverse().map((fontSize, index) => (
                <Row key={fontSize}>
-                  <Cell>fontSizes[{fontSizes.length - 1 - index}]</Cell>
-                  <Cell>{fontSize}</Cell>
+                  <Cell>
+                     <Code>fontSizes[{fontSizes.length - 1 - index}]</Code>
+                  </Cell>
+                  <Cell>
+                     <Code>{fontSize}</Code>
+                  </Cell>
                </Row>
             ))}
          </tbody>

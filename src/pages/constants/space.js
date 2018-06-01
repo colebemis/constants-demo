@@ -5,6 +5,7 @@ import Text from '../../components/Text';
 import { space } from '../../constants';
 import Heading from '../../components/Heading';
 import Table, { Cell, Header, Row } from '../../components/Table';
+import Code from '../../components/Code';
 
 export default props => (
    <Box>
@@ -30,8 +31,12 @@ export default props => (
          <tbody>
             {space.map((value, index) => (
                <Row key={value}>
-                  <Cell>space[{index}]</Cell>
-                  <Cell>{value}</Cell>
+                  <Cell>
+                     <Code>space[{index}]</Code>
+                  </Cell>
+                  <Cell>
+                     <Code>{value}</Code>
+                  </Cell>
                </Row>
             ))}
          </tbody>

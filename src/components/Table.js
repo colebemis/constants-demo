@@ -21,11 +21,14 @@ const Header = system({
 
 Header.displayName = 'Header';
 
-const Cell = system({
-   is: 'td',
-   px: 2,
-   py: 3
-});
+const Cell = system(
+   {
+      is: 'td',
+      px: 2,
+      py: 3
+   },
+   { verticalAlign: 'top' }
+);
 
 Cell.displayName = 'Cell';
 

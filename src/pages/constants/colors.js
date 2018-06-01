@@ -5,6 +5,7 @@ import Heading from '../../components/Heading';
 import Table, { Cell, Header, Row } from '../../components/Table';
 import Text from '../../components/Text';
 import { colors } from '../../constants';
+import Code from '../../components/Code';
 
 const Color = ({ name, value }) => (
    <Flex alignItems="center" mb={1}>
@@ -59,16 +60,24 @@ export default props => (
                ([name, value]) =>
                   typeof value === 'string' ? (
                      <Row>
-                        <Cell>colors.{name}</Cell>
-                        <Cell>{value}</Cell>
+                        <Cell>
+                           <Code>colors.{name}</Code>
+                        </Cell>
+                        <Cell>
+                           <Code>{value}</Code>
+                        </Cell>
                      </Row>
                   ) : (
                      value.map((color, index) => (
                         <Row key={color}>
                            <Cell>
-                              colors.{name}[{index}]
+                              <Code>
+                                 colors.{name}[{index}]
+                              </Code>
                            </Cell>
-                           <Cell>{color}</Cell>
+                           <Cell>
+                              <Code>{color}</Code>
+                           </Cell>
                         </Row>
                      ))
                   )
