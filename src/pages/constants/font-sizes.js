@@ -1,35 +1,24 @@
 import React from 'react';
-import { fontSizes, space, lineHeights } from '../../constants';
+import Box from '../../components/Box';
+import Flex from '../../components/Flex';
+import Text from '../../components/Text';
+import Truncate from '../../components/Truncate';
+import { fontSizes } from '../../constants';
 
 export default props => (
-   <div>
+   <Box>
       <h1>Font Sizes</h1>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <Flex flexDirection="column">
          {[...fontSizes].reverse().map((fontSize, index) => (
-            <div key={fontSize} style={{ marginBottom: space[6] }}>
-               <span
-                  style={{
-                     display: 'block',
-                     marginBottom: space[2],
-                     lineHeight: lineHeights.tight
-                  }}
-               >
+            <Flex key={fontSize} flexDirection="column" mb={6}>
+               <Text>
                   {fontSizes.length - 1 - index} ({fontSize}px)
-               </span>
-               <span
-                  style={{
-                     display: 'block',
-                     fontSize,
-                     lineHeight: lineHeights.tight,
-                     whiteSpace: 'nowrap',
-                     overflow: 'hidden',
-                     textOverflow: 'ellipsis'
-                  }}
-               >
+               </Text>
+               <Truncate fontSize={fontSize} lineHeight="tight">
                   Aa The quick brown fox jumps over the lazy dog
-               </span>
-            </div>
+               </Truncate>
+            </Flex>
          ))}
-      </div>
-   </div>
+      </Flex>
+   </Box>
 );

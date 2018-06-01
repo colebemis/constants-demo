@@ -67,6 +67,11 @@ export const space = [0, 4, 8, 12, 16, 24, 32, 64, 128, 256];
 
 export const fontSizes = [12, 14, 16, 20, 24, 32, 36, 48];
 
+export const fontWeights = {
+   normal: 400,
+   bold: 700
+};
+
 export const lineHeights = {
    none: 1,
    tight: 1.25,
@@ -76,14 +81,14 @@ export const lineHeights = {
 
 export const radii = [0, 4];
 
-export const fontWeights = {
-   normal: 400,
-   bold: 700
-};
+export const breakpoints = ['32em', '40em', '48em', '64em'];
 
-export const breakpoints = {
-   sm: '32em',
-   md: '40em',
-   lg: '48em',
-   xl: '64em'
+export default {
+   colors,
+   space,
+   fontSizes,
+   fontWeights,
+   lineHeights,
+   radii,
+   breakpoints
 };

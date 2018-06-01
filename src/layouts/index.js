@@ -1,6 +1,21 @@
 import Link from 'gatsby-link';
 import React from 'react';
-import { colors, space, lineHeights } from '../constants';
+import { ThemeProvider, injectGlobal } from 'styled-components';
+import Box from '../components/Box';
+import Flex from '../components/Flex';
+import constants, { lineHeights } from '../constants';
+
+injectGlobal({
+   '*, *:before, *:after': {
+      boxSizing: 'inherit'
+   },
+
+   body: {
+      boxSizing: 'border-box',
+      margin: 0,
+      fontFamily: 'system-ui'
+   }
+});
 
 const kebabToTitle = str =>
    str
@@ -9,50 +24,37 @@ const kebabToTitle = str =>
       .join(' ');
 
 const Nav = ({ data }) => (
-   <nav
-      style={{
-         width: 240,
-         paddingTop: space[4],
-         paddingBottom: space[4],
-         backgroundColor: colors.grayAlpha[1]
-      }}
+   <Box
+      is="nav"
+      width={240}
+      py={4}
+      borderRight="1px solid"
+      borderColor="grayAlpha.3"
    >
-      <ul style={{ margin: 0, padding: 0, listStyle: 'none' }}>
-         {data.allFile.files.map(({ file }) => (
-            <li
-               key={file.name}
-               style={{
-                  paddingLeft: space[5],
-                  paddingRight: space[5],
-                  lineHeight: lineHeights.loose
-               }}
+      {data.allFile.files.map(({ file }) => (
+         <Box key={file.name} px={5}>
+            <Link
+               to={`/constants/${file.name}`}
+               style={{ textDecoration: 'none', lineHeight: lineHeights.loose }}
             >
-               <Link
-                  to={`/constants/${file.name}`}
-                  style={{ textDecoration: 'none' }}
-               >
-                  {kebabToTitle(file.name)}
-               </Link>
-            </li>
-         ))}
-      </ul>
-   </nav>
+               {kebabToTitle(file.name)}
+            </Link>
+         </Box>
+      ))}
+   </Box>
 );
 
 export default ({ children, data }) => (
-   <div
-      style={{
-         display: 'flex',
-         margin: -space[2],
-         height: '100vh',
-         fontFamily: 'system-ui'
-      }}
-   >
-      <Nav data={data} />
-      <main style={{ flex: '1 1 auto', overflow: 'auto', padding: space[4] }}>
-         <div style={{ margin: '0 auto', maxWidth: 800 }}>{children()}</div>
-      </main>
-   </div>
+   <ThemeProvider theme={constants}>
+      <Flex height="100vh">
+         <Nav data={data} />
+         <Box is="main" flex="1 1 auto" p={4} style={{ overflow: 'auto' }}>
+            <Box m="0 auto" maxWidth={800}>
+               {children()}
+            </Box>
+         </Box>
+      </Flex>
+   </ThemeProvider>
 );
 
 export const query = graphql`

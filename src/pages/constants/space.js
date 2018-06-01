@@ -1,30 +1,21 @@
 import React from 'react';
-import { space, lineHeights } from '../../constants';
+import Box from '../../components/Box';
+import Flex from '../../components/Flex';
+import Text from '../../components/Text';
+import { space } from '../../constants';
 
 export default props => (
-   <div>
+   <Box>
       <h1>Space</h1>
-      <div style={{ display: 'flex', flexDirection: 'column' }}>
+      <Flex flexDirection="column">
          {space.map((value, index) => (
-            <div key={value} style={{ marginBottom: space[6] }}>
-               <span
-                  style={{
-                     display: 'inline-block',
-                     marginBottom: space[2],
-                     lineHeight: lineHeights.tight
-                  }}
-               >
+            <Box key={value} mb={6}>
+               <Text mb={2}>
                   {index} ({value}px)
-               </span>
-               <div
-                  style={{
-                     width: value,
-                     height: value,
-                     background: 'rgba(255, 0, 0, 0.25)'
-                  }}
-               />
-            </div>
+               </Text>
+               <Box width={value} height={value} bg="blue.2" />
+            </Box>
          ))}
-      </div>
-   </div>
+      </Flex>
+   </Box>
 );

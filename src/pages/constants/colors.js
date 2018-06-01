@@ -1,14 +1,11 @@
 import React from 'react';
-import { colors, space, radii, lineHeights } from '../../constants';
+import Box from '../../components/Box';
+import Flex from '../../components/Flex';
+import Text from '../../components/Text';
+import { colors } from '../../constants';
 
 const Color = ({ name, value }) => (
-   <div
-      style={{
-         display: 'flex',
-         alignItems: 'center',
-         marginBottom: space[1]
-      }}
-   >
+   <Flex alignItems="center" mb={1}>
       <div
          style={{
             width: 128,
@@ -17,30 +14,21 @@ const Color = ({ name, value }) => (
             overflow: 'hidden'
          }}
       >
-         <div
-            style={{ width: '100%', height: '100%', backgroundColor: value }}
-         />
+         <Box width="100%" height="100%" bg={value} />
       </div>
-      <div
-         style={{
-            display: 'flex',
-            flexDirection: 'column',
-            marginLeft: space[4],
-            lineHeight: lineHeights.normal
-         }}
-      >
-         <span>{name}</span>
-         <span style={{ color: colors.grayAlpha[6] }}>{value}</span>
-      </div>
-   </div>
+      <Flex flexDirection="column" ml={4}>
+         <Text>{name}</Text>
+         <Text color="grayAlpha.6">{value}</Text>
+      </Flex>
+   </Flex>
 );
 
 export default props => (
-   <div>
+   <Box>
       <h1>Colors</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <Flex flexWrap="wrap">
          {Object.entries(colors).map(([name, value]) => (
-            <div key={name} style={{ width: '50%', marginBottom: space[6] }}>
+            <Box key={name} width="50%" mb={6}>
                {typeof value === 'string' ? (
                   <Color name={name} value={value} />
                ) : (
@@ -52,8 +40,8 @@ export default props => (
                      />
                   ))
                )}
-            </div>
+            </Box>
          ))}
-      </div>
-   </div>
+      </Flex>
+   </Box>
 );
