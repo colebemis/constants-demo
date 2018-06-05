@@ -5,8 +5,8 @@ const Code = system({
    is: 'code',
    font: 'Menlo, monospace',
    fontSize: 1,
-   lineHeight: 'normal',
-   color: 'grayAlpha.9'
+   lineHeight: 'copy',
+   color: 'grayAlpha.9',
 });
 
 Code.displayName = 'Code';

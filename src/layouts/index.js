@@ -32,10 +32,10 @@ const Nav = ({ data }) => (
       borderColor="grayAlpha.3"
    >
       {data.allFile.files.map(({ file }) => (
-         <Box key={file.name} px={5}>
+         <Box key={file.name} px={5} py={1}>
             <Link
                to={`/constants/${file.name}`}
-               style={{ textDecoration: 'none', lineHeight: lineHeights.loose }}
+               style={{ textDecoration: 'none', lineHeight: lineHeights.copy }}
             >
                {kebabToTitle(file.name)}
             </Link>

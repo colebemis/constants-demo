@@ -8,12 +8,12 @@ const Heading = system(
       mb: 4,
       fontSize: 6,
       fontWeight: 'bold',
-      lineHeight: 'tight',
-      color: 'grayAlpha.9'
+      lineHeight: 'title',
+      color: 'grayAlpha.9',
    },
    'width',
    'textAlign',
-   'letterSpacing'
+   'letterSpacing',
 );
 
 Heading.displayName = 'Heading';

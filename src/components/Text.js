@@ -6,13 +6,13 @@ const Text = system(
       display: 'inline-block',
       fontSize: 2,
       fontWeight: 'normal',
-      lineHeight: 'normal',
-      color: 'grayAlpha.9'
+      lineHeight: 'copy',
+      color: 'grayAlpha.9',
    },
    'space',
    'width',
    'textAlign',
-   'letterSpacing'
+   'letterSpacing',
 );
 
 Text.displayName = 'Text';
