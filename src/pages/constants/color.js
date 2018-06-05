@@ -9,7 +9,7 @@ import Text from '../../components/Text';
 const { color } = constants;
 
 const Color = ({ name, value }) => (
-   <Flex alignItems="center" mb={1}>
+   <Flex alignItems="center" mb={0}>
       <div
          style={{
             width: 128,
@@ -20,7 +20,7 @@ const Color = ({ name, value }) => (
       >
          <Box width="100%" height="100%" bg={value} />
       </div>
-      <Flex flexDirection="column" ml={4}>
+      <Flex flexDirection="column" ml={3}>
          <Text>{name}</Text>
          <Text fontSize={1} color="grayAlpha.6">
             {value}
@@ -34,7 +34,7 @@ export default props => (
       <Heading>Color</Heading>
       <Flex flexWrap="wrap">
          {Object.entries(color).map(([name, value]) => (
-            <Box key={name} width="50%" mb={6}>
+            <Box key={name} width="50%" mb={5}>
                {typeof value === 'string' ? (
                   <Color name={name} value={value} />
                ) : (

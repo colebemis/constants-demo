@@ -12,11 +12,11 @@ export default props => (
    <Box>
       <Heading>Shadows</Heading>
 
-      <Flex mb={6}>
+      <Flex mx={-2} mb={4}>
          {shadows.map((value, index) => (
             <Flex
                key={value}
-               m={3}
+               m={2}
                borderRadius={1}
                flex="1 1 auto"
                height={100}

@@ -27,12 +27,12 @@ const Nav = ({ data }) => (
    <Box
       is="nav"
       width={240}
-      py={4}
+      py={3}
       borderRight="1px solid"
       borderColor="grayAlpha.3"
    >
       {data.allFile.files.map(({ file }) => (
-         <Box key={file.name} px={5} py={1}>
+         <Box key={file.name} px={5} py={0}>
             <Link
                to={`/constants/${file.name}`}
                style={{ textDecoration: 'none', lineHeight: lineHeights.copy }}
@@ -48,7 +48,7 @@ export default ({ children, data }) => (
    <ThemeProvider theme={theme}>
       <Flex height="100vh">
          <Nav data={data} />
-         <Box is="main" flex="1 1 auto" p={4} style={{ overflow: 'auto' }}>
+         <Box is="main" flex="1 1 auto" p={3} style={{ overflow: 'auto' }}>
             <Box m="0 auto" maxWidth={720}>
                {children()}
             </Box>

@@ -2,7 +2,7 @@ import { constants } from '@ifixit/toolbox';
 
 export const colors = constants.color;
 
-export const space = [0, 4, 8, 12, 16, 24, 32, 64, 128, 256];
+export const space = constants.spacing;
 
 export const fontSizes = constants.fontSize;
 

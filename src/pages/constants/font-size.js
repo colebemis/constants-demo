@@ -15,7 +15,7 @@ export default props => (
 
       <Flex flexDirection="column">
          {[...fontSize].reverse().map((value, index) => (
-            <Flex key={value} flexDirection="column" mb={6}>
+            <Flex key={value} flexDirection="column" mb={5}>
                <Text>
                   {fontSize.length - 1 - index} ({value})
                </Text>

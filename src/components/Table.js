@@ -4,7 +4,7 @@ const Table = system(
    {
       is: 'table',
       width: '100%',
-      mb: 4,
+      mb: 3,
    },
    {
       tableLayout: 'fixed',
@@ -25,8 +25,8 @@ Header.displayName = 'Header';
 const Cell = system(
    {
       is: 'td',
-      px: 2,
-      py: 3,
+      px: 1,
+      py: 2,
    },
    { verticalAlign: 'top' },
    'width',
