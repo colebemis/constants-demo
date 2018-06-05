@@ -1,5 +1,5 @@
 import system from 'system-components';
-import { lineHeights } from '../constants';
+import { lineHeights } from '../theme';
 
 const Code = system({
    is: 'code',

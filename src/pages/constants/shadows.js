@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '../../components/Box';
 import Flex from '../../components/Flex';
 import Text from '../../components/Text';
-import { shadows } from '../../constants';
+import { shadows } from '../../theme';
 import Heading from '../../components/Heading';
 import Table, { Cell, Header, Row } from '../../components/Table';
 import Code from '../../components/Code';

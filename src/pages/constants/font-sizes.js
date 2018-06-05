@@ -4,7 +4,7 @@ import Flex from '../../components/Flex';
 import Text from '../../components/Text';
 import Truncate from '../../components/Truncate';
 import Heading from '../../components/Heading';
-import { fontSizes } from '../../constants';
+import { fontSizes } from '../../theme';
 import Table, { Cell, Header, Row } from '../../components/Table';
 import Code from '../../components/Code';
 

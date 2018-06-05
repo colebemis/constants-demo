@@ -1,11 +1,13 @@
+import { constants } from '@ifixit/toolbox';
 import React from 'react';
 import Box from '../../components/Box';
+import Code from '../../components/Code';
 import Flex from '../../components/Flex';
 import Heading from '../../components/Heading';
 import Table, { Cell, Header, Row } from '../../components/Table';
 import Text from '../../components/Text';
-import { colors } from '../../constants';
-import Code from '../../components/Code';
+
+const { color } = constants;
 
 const Color = ({ name, value }) => (
    <Flex alignItems="center" mb={1}>
@@ -14,7 +16,7 @@ const Color = ({ name, value }) => (
             width: 128,
             height: 64,
             backgroundImage: `url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z' fill='%23ddd' fill-opacity='.4'/%3E%3C/svg%3E")`,
-            overflow: 'hidden'
+            overflow: 'hidden',
          }}
       >
          <Box width="100%" height="100%" bg={value} />
@@ -30,19 +32,19 @@ const Color = ({ name, value }) => (
 
 export default props => (
    <Box>
-      <Heading>Colors</Heading>
+      <Heading>Color</Heading>
 
       <Flex flexWrap="wrap">
-         {Object.entries(colors).map(([name, value]) => (
+         {Object.entries(color).map(([name, value]) => (
             <Box key={name} width="50%" mb={6}>
                {typeof value === 'string' ? (
                   <Color name={name} value={value} />
                ) : (
-                  value.map((color, index) => (
+                  value.map((colorValue, index) => (
                      <Color
-                        key={color}
+                        key={colorValue}
                         name={`${name} ${index}`}
-                        value={color}
+                        value={colorValue}
                      />
                   ))
                )}
@@ -58,31 +60,31 @@ export default props => (
             </Row>
          </Header>
          <tbody>
-            {Object.entries(colors).map(
+            {Object.entries(color).map(
                ([name, value]) =>
                   typeof value === 'string' ? (
                      <Row>
                         <Cell>
-                           <Code>colors.{name}</Code>
+                           <Code>color.{name}</Code>
                         </Cell>
                         <Cell>
                            <Code>{value}</Code>
                         </Cell>
                      </Row>
                   ) : (
-                     value.map((color, index) => (
-                        <Row key={color}>
+                     value.map((colorValue, index) => (
+                        <Row key={colorValue}>
                            <Cell>
                               <Code>
-                                 colors.{name}[{index}]
+                                 color.{name}[{index}]
                               </Code>
                            </Cell>
                            <Cell>
-                              <Code>{color}</Code>
+                              <Code>{colorValue}</Code>
                            </Cell>
                         </Row>
                      ))
-                  )
+                  ),
             )}
          </tbody>
       </Table>

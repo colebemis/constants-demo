@@ -3,18 +3,18 @@ import React from 'react';
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import Box from '../components/Box';
 import Flex from '../components/Flex';
-import constants, { lineHeights } from '../constants';
+import theme, { lineHeights } from '../theme';
 
 injectGlobal({
    '*, *:before, *:after': {
-      boxSizing: 'inherit'
+      boxSizing: 'inherit',
    },
 
    body: {
       boxSizing: 'border-box',
       margin: 0,
-      fontFamily: 'system-ui'
-   }
+      fontFamily: 'system-ui',
+   },
 });
 
 const kebabToTitle = str =>
@@ -45,7 +45,7 @@ const Nav = ({ data }) => (
 );
 
 export default ({ children, data }) => (
-   <ThemeProvider theme={constants}>
+   <ThemeProvider theme={theme}>
       <Flex height="100vh">
          <Nav data={data} />
          <Box is="main" flex="1 1 auto" p={4} style={{ overflow: 'auto' }}>

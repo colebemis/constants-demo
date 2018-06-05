@@ -3,7 +3,7 @@ import Box from '../../components/Box';
 import Code from '../../components/Code';
 import Heading from '../../components/Heading';
 import Table, { Cell, Header, Row } from '../../components/Table';
-import { lineHeights } from '../../constants';
+import { lineHeights } from '../../theme';
 
 export default props => (
    <Box>
