@@ -1,15 +1,17 @@
+import { constants } from '@ifixit/toolbox';
 import React from 'react';
 import Box from '../../components/Box';
 import Flex from '../../components/Flex';
-import Text from '../../components/Text';
-import { shadows } from '../../theme';
 import Heading from '../../components/Heading';
-import Table, { Cell, Header, Row } from '../../components/Table';
-import Code from '../../components/Code';
+import KeyValueTable from '../../components/KeyValueTable';
+import Text from '../../components/Text';
+
+const { shadows } = constants;
 
 export default props => (
    <Box>
       <Heading>Shadows</Heading>
+
       <Flex mb={6}>
          {shadows.map((value, index) => (
             <Flex
@@ -28,25 +30,6 @@ export default props => (
          ))}
       </Flex>
 
-      <Table>
-         <Header>
-            <Row>
-               <Cell is="th">Key</Cell>
-               <Cell is="th">Value</Cell>
-            </Row>
-         </Header>
-         <tbody>
-            {shadows.map((value, index) => (
-               <Row key={value}>
-                  <Cell>
-                     <Code>shadows[{index}]</Code>
-                  </Cell>
-                  <Cell>
-                     <Code>{value}</Code>
-                  </Cell>
-               </Row>
-            ))}
-         </tbody>
-      </Table>
+      <KeyValueTable name="shadows" data={shadows} />
    </Box>
 );
