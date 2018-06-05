@@ -4,7 +4,7 @@ export const colors = constants.color;
 
 export const space = [0, 4, 8, 12, 16, 24, 32, 64, 128, 256];
 
-export const fontSizes = [12, 14, 16, 20, 24, 32, 36, 48];
+export const fontSizes = constants.fontSize;
 
 export const fontWeights = {
    normal: 400,
