@@ -1,10 +1,9 @@
 import { constants } from '@ifixit/toolbox';
 import React from 'react';
 import Box from '../../components/Box';
-import Code from '../../components/Code';
 import Flex from '../../components/Flex';
 import Heading from '../../components/Heading';
-import Table, { Cell, Header, Row } from '../../components/Table';
+import KeyValueTable from '../../components/KeyValueTable';
 import Text from '../../components/Text';
 
 const { color } = constants;
@@ -33,7 +32,6 @@ const Color = ({ name, value }) => (
 export default props => (
    <Box>
       <Heading>Color</Heading>
-
       <Flex flexWrap="wrap">
          {Object.entries(color).map(([name, value]) => (
             <Box key={name} width="50%" mb={6}>
@@ -51,42 +49,6 @@ export default props => (
             </Box>
          ))}
       </Flex>
-
-      <Table>
-         <Header>
-            <Row>
-               <Cell is="th">Key</Cell>
-               <Cell is="th">Value</Cell>
-            </Row>
-         </Header>
-         <tbody>
-            {Object.entries(color).map(
-               ([name, value]) =>
-                  typeof value === 'string' ? (
-                     <Row>
-                        <Cell>
-                           <Code>color.{name}</Code>
-                        </Cell>
-                        <Cell>
-                           <Code>{value}</Code>
-                        </Cell>
-                     </Row>
-                  ) : (
-                     value.map((colorValue, index) => (
-                        <Row key={colorValue}>
-                           <Cell>
-                              <Code>
-                                 color.{name}[{index}]
-                              </Code>
-                           </Cell>
-                           <Cell>
-                              <Code>{colorValue}</Code>
-                           </Cell>
-                        </Row>
-                     ))
-                  ),
-            )}
-         </tbody>
-      </Table>
+      <KeyValueTable name="color" data={color} />
    </Box>
 );

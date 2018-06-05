@@ -4,12 +4,12 @@ const Table = system(
    {
       is: 'table',
       width: '100%',
-      mb: 4
+      mb: 4,
    },
    {
       tableLayout: 'fixed',
-      borderCollapse: 'collapse'
-   }
+      borderCollapse: 'collapse',
+   },
 );
 
 Table.displayName = 'Table';
@@ -17,7 +17,7 @@ Table.displayName = 'Table';
 const Header = system({
    is: 'thead',
    textAlign: 'left',
-   bg: 'grayAlpha.1'
+   bg: 'grayAlpha.1',
 });
 
 Header.displayName = 'Header';
@@ -26,9 +26,10 @@ const Cell = system(
    {
       is: 'td',
       px: 2,
-      py: 3
+      py: 3,
    },
-   { verticalAlign: 'top' }
+   { verticalAlign: 'top' },
+   'width',
 );
 
 Cell.displayName = 'Cell';
@@ -36,7 +37,7 @@ Cell.displayName = 'Cell';
 const Row = system({
    is: 'tr',
    borderBottom: '1px solid',
-   borderColor: 'grayAlpha.2'
+   borderColor: 'grayAlpha.2',
 });
 
 Row.displayName = 'Row';

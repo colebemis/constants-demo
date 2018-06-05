@@ -49,7 +49,7 @@ export default ({ children, data }) => (
       <Flex height="100vh">
          <Nav data={data} />
          <Box is="main" flex="1 1 auto" p={4} style={{ overflow: 'auto' }}>
-            <Box m="0 auto" maxWidth={672}>
+            <Box m="0 auto" maxWidth={720}>
                {children()}
             </Box>
          </Box>
