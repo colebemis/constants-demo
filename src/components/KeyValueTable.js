@@ -30,11 +30,9 @@ class KeyValueTable extends Component {
       }
 
       if (isArray(data)) {
-         {
-            return data.map((value, index) =>
-               this.renderRows({ name: `${name}[${index}]`, data: value }),
-            );
-         }
+         return data.map((value, index) =>
+            this.renderRows({ name: `${name}[${index}]`, data: value }),
+         );
       }
 
       return Object.entries(data).map(([key, value]) =>
