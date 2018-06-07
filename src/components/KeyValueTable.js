@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Table, { Header, Row, Cell } from './Table';
+import Subheading from './Subheading';
 import Code from './Code';
 
 function isArray(value) {
@@ -12,6 +13,10 @@ function isPrimitive(value) {
 }
 
 class KeyValueTable extends Component {
+   static defaultProps = {
+      heading: 'Reference Table',
+   };
+
    renderRows({ name, data }) {
       if (isPrimitive(data)) {
          return (
@@ -41,25 +46,28 @@ class KeyValueTable extends Component {
    }
 
    render() {
-      const { name, data } = this.props;
+      const { heading, name, data } = this.props;
 
       return (
-         <Table>
-            <Header>
-               <Row>
-                  <Cell is="th" width={2 / 6}>
-                     Key
-                  </Cell>
-                  <Cell is="th" width={3 / 6}>
-                     Value
-                  </Cell>
-                  <Cell is="th" width={1 / 6}>
-                     Type
-                  </Cell>
-               </Row>
-            </Header>
-            <tbody>{this.renderRows({ name, data })}</tbody>
-         </Table>
+         <div>
+            <Subheading>{heading}</Subheading>
+            <Table>
+               <Header>
+                  <Row>
+                     <Cell is="th" width={2 / 6}>
+                        Key
+                     </Cell>
+                     <Cell is="th" width={3 / 6}>
+                        Value
+                     </Cell>
+                     <Cell is="th" width={1 / 6}>
+                        Type
+                     </Cell>
+                  </Row>
+               </Header>
+               <tbody>{this.renderRows({ name, data })}</tbody>
+            </Table>
+         </div>
       );
    }
 }

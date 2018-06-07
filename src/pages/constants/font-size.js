@@ -11,7 +11,7 @@ const { fontSize } = constants;
 
 export default props => (
    <Box>
-      <Heading>Font Size</Heading>
+      <Heading mt="0">Font Size</Heading>
 
       <Flex flexDirection="column">
          {[...fontSize].reverse().map((value, index) => (

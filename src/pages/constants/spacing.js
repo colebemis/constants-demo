@@ -10,7 +10,7 @@ const { spacing } = constants;
 
 export default props => (
    <Box>
-      <Heading>Spacing</Heading>
+      <Heading mt="0">Spacing</Heading>
 
       <Flex flexDirection="column">
          {spacing.map((value, index) => (

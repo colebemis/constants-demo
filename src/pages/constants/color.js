@@ -1,14 +1,14 @@
 import { constants } from '@ifixit/toolbox';
 import React from 'react';
 import Box from '../../components/Box';
+import Code from '../../components/Code';
 import Flex from '../../components/Flex';
 import Heading from '../../components/Heading';
 import KeyValueTable from '../../components/KeyValueTable';
-import Text from '../../components/Text';
-import Pre from '../../components/Pre';
-import Code from '../../components/Code';
-import Subheading from '../../components/Subheading';
 import Paragraph from '../../components/Paragraph';
+import Pre from '../../components/Pre';
+import Subheading from '../../components/Subheading';
+import Text from '../../components/Text';
 
 const { color } = constants;
 
@@ -35,7 +35,7 @@ const Color = ({ name, value }) => (
 
 export default props => (
    <Box>
-      <Heading>Color</Heading>
+      <Heading mt="0">Color</Heading>
       <Flex flexWrap="wrap" mb={-5}>
          {Object.entries(color).map(([name, value]) => (
             <Box key={name} width={['100%', null, '50%']} mb={5}>
@@ -65,7 +65,6 @@ const { color } = constants;`.trim()}
       <Paragraph>
          See reference table for the available properties on <Code>color</Code>.
       </Paragraph>
-      <Subheading>Reference Table</Subheading>
       <KeyValueTable name="color" data={color} />
    </Box>
 );

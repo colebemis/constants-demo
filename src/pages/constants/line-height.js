@@ -9,7 +9,7 @@ const { lineHeight } = constants;
 
 export default props => (
    <Box>
-      <Heading>Line Height</Heading>
+      <Heading mt="0">Line Height</Heading>
 
       {Object.entries(lineHeight).map(([key, value]) => (
          <Paragraph lineHeight={value}>

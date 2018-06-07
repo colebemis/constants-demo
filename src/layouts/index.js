@@ -24,15 +24,9 @@ const kebabToTitle = str =>
       .join(' ');
 
 const Nav = ({ data }) => (
-   <Box
-      is="nav"
-      width={240}
-      py={3}
-      borderRight="1px solid"
-      borderColor="grayAlpha.3"
-   >
+   <Box is="nav" width={['100%', null, null, 240]} py={3} bg="grayAlpha.1">
       {data.allFile.files.map(({ file }) => (
-         <Box key={file.name} px={5} py={0}>
+         <Box key={file.name} px={[3, null, null, 5]} py={0}>
             <Link
                to={`/constants/${file.name}`}
                style={{ textDecoration: 'none', lineHeight: lineHeights.copy }}
@@ -46,9 +40,18 @@ const Nav = ({ data }) => (
 
 export default ({ children, data }) => (
    <ThemeProvider theme={theme}>
-      <Flex height="100vh">
+      <Flex
+         height={['auto', null, null, '100vh']}
+         flexDirection={['column', null, null, 'row']}
+      >
          <Nav data={data} />
-         <Box is="main" flex="1 1 auto" p={3} style={{ overflow: 'auto' }}>
+         <Box
+            is="main"
+            flex="1 1 auto"
+            py={4}
+            px={3}
+            style={{ overflow: 'auto' }}
+         >
             <Box m="0 auto" maxWidth={720}>
                {children()}
             </Box>

@@ -3,7 +3,7 @@ import system from 'system-components';
 const Heading = system(
    {
       is: 'h1',
-      mx: 0,
+      mx: '0',
       mt: 4,
       mb: 3,
       fontSize: 6,

@@ -8,6 +8,8 @@ const Pre = system(
       bg: 'grayAlpha.1',
    },
    {
+      overflow: 'auto',
+
       '> code': {
          fontSize: '100%',
       },
