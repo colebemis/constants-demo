@@ -81,7 +81,7 @@ export default ({ children, data }) => (
             px={3}
             style={{ overflow: 'auto' }}
          >
-            <Box m="0 auto" maxWidth={720}>
+            <Box m="0 auto" maxWidth={680}>
                {children()}
             </Box>
          </Box>
