@@ -1,9 +1,12 @@
 import Link from 'gatsby-link';
 import React from 'react';
 import { ThemeProvider, injectGlobal } from 'styled-components';
+import system from 'system-components';
 import Box from '../components/Box';
 import Flex from '../components/Flex';
+import Heading from '../components/Heading';
 import theme, { lineHeights } from '../theme';
+import { themeGet } from 'styled-system';
 
 injectGlobal({
    '*, *:before, *:after': {
@@ -23,16 +26,42 @@ const kebabToTitle = str =>
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
+const NavLink = system(
+   {
+      is: Link,
+      activeClassName: 'active',
+      color: 'grayAlpha.6',
+      lineHeight: 'copy',
+   },
+   props => ({
+      textDecoration: 'none',
+
+      '&.active': {
+         fontWeight: 500,
+         color: themeGet('colors.blue.4')(props),
+      },
+   }),
+);
+
 const Nav = ({ data }) => (
-   <Box is="nav" width={['100%', null, null, 240]} py={3} bg="grayAlpha.1">
+   <Box
+      is="nav"
+      width={['100%', null, null, 240]}
+      pb={3}
+      px={5}
+      bg="grayAlpha.1"
+   >
+      <Heading fontSize={2}>Style Constants</Heading>
+      <Box py={0}>
+         <NavLink exact to="/">
+            Introduction
+         </NavLink>
+      </Box>
       {data.allFile.files.map(({ file }) => (
-         <Box key={file.name} px={[3, null, null, 5]} py={0}>
-            <Link
-               to={`/constants/${file.name}`}
-               style={{ textDecoration: 'none', lineHeight: lineHeights.copy }}
-            >
+         <Box key={file.name} py={0}>
+            <NavLink to={`/constants/${file.name}`}>
                {kebabToTitle(file.name)}
-            </Link>
+            </NavLink>
          </Box>
       ))}
    </Box>
@@ -48,7 +77,7 @@ export default ({ children, data }) => (
          <Box
             is="main"
             flex="1 1 auto"
-            py={4}
+            py={5}
             px={3}
             style={{ overflow: 'auto' }}
          >
