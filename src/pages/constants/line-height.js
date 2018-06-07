@@ -4,13 +4,13 @@ import Box from '../../components/Box';
 import Heading from '../../components/Heading';
 import KeyValueTable from '../../components/KeyValueTable';
 import Paragraph from '../../components/Paragraph';
+import Usage from '../../components/Usage';
 
 const { lineHeight } = constants;
 
 export default props => (
    <Box>
       <Heading mt="0">Line Height</Heading>
-
       {Object.entries(lineHeight).map(([key, value]) => (
          <Paragraph lineHeight={value}>
             {key} ({value}) Lorem ipsum dolor sit amet, consetetur sadipscing
@@ -20,7 +20,7 @@ export default props => (
             takimata sanctus est Lorem ipsum dolor sit amet.
          </Paragraph>
       ))}
-
+      <Usage name="lineHeight" />
       <KeyValueTable name="lineHeight" data={lineHeight} />
    </Box>
 );

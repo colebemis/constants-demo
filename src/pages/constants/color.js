@@ -1,14 +1,11 @@
 import { constants } from '@ifixit/toolbox';
 import React from 'react';
 import Box from '../../components/Box';
-import Code from '../../components/Code';
 import Flex from '../../components/Flex';
 import Heading from '../../components/Heading';
 import KeyValueTable from '../../components/KeyValueTable';
-import Paragraph from '../../components/Paragraph';
-import Pre from '../../components/Pre';
-import Subheading from '../../components/Subheading';
 import Text from '../../components/Text';
+import Usage from '../../components/Usage';
 
 const { color } = constants;
 
@@ -53,18 +50,7 @@ export default props => (
             </Box>
          ))}
       </Flex>
-      <Subheading>Usage</Subheading>
-      <Pre>
-         <Code>
-            {`
-import { constants } from '@ifixit/toolbox';
-
-const { color } = constants;`.trim()}
-         </Code>
-      </Pre>
-      <Paragraph>
-         See reference table for the available properties on <Code>color</Code>.
-      </Paragraph>
+      <Usage name="color" />
       <KeyValueTable name="color" data={color} />
    </Box>
 );

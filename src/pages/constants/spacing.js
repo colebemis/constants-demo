@@ -5,13 +5,13 @@ import Flex from '../../components/Flex';
 import Heading from '../../components/Heading';
 import KeyValueTable from '../../components/KeyValueTable';
 import Text from '../../components/Text';
+import Usage from '../../components/Usage';
 
 const { spacing } = constants;
 
 export default props => (
    <Box>
       <Heading mt="0">Spacing</Heading>
-
       <Flex flexDirection="column">
          {spacing.map((value, index) => (
             <Box key={value} mb={5}>
@@ -22,7 +22,7 @@ export default props => (
             </Box>
          ))}
       </Flex>
-
+      <Usage name="spacing" />
       <KeyValueTable name="spacing" data={spacing} />
    </Box>
 );

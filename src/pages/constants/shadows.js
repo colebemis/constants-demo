@@ -5,6 +5,7 @@ import Flex from '../../components/Flex';
 import Heading from '../../components/Heading';
 import KeyValueTable from '../../components/KeyValueTable';
 import Text from '../../components/Text';
+import Usage from '../../components/Usage';
 
 const { shadows } = constants;
 
@@ -29,6 +30,8 @@ export default props => (
             </Flex>
          ))}
       </Flex>
+
+      <Usage name="shadows" />
 
       <KeyValueTable name="shadows" data={shadows} />
    </Box>
