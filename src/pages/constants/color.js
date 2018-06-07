@@ -5,6 +5,10 @@ import Flex from '../../components/Flex';
 import Heading from '../../components/Heading';
 import KeyValueTable from '../../components/KeyValueTable';
 import Text from '../../components/Text';
+import Pre from '../../components/Pre';
+import Code from '../../components/Code';
+import Subheading from '../../components/Subheading';
+import Paragraph from '../../components/Paragraph';
 
 const { color } = constants;
 
@@ -32,9 +36,9 @@ const Color = ({ name, value }) => (
 export default props => (
    <Box>
       <Heading>Color</Heading>
-      <Flex flexWrap="wrap">
+      <Flex flexWrap="wrap" mb={-5}>
          {Object.entries(color).map(([name, value]) => (
-            <Box key={name} width="50%" mb={5}>
+            <Box key={name} width={['100%', null, '50%']} mb={5}>
                {typeof value === 'string' ? (
                   <Color name={name} value={value} />
                ) : (
@@ -49,6 +53,19 @@ export default props => (
             </Box>
          ))}
       </Flex>
+      <Subheading>Usage</Subheading>
+      <Pre>
+         <Code>
+            {`
+import { constants } from '@ifixit/toolbox';
+
+const { color } = constants;`.trim()}
+         </Code>
+      </Pre>
+      <Paragraph>
+         See reference table for the available properties on <Code>color</Code>.
+      </Paragraph>
+      <Subheading>Reference Table</Subheading>
       <KeyValueTable name="color" data={color} />
    </Box>
 );

@@ -25,8 +25,7 @@ Header.displayName = 'Header';
 const Cell = system(
    {
       is: 'td',
-      px: 1,
-      py: 2,
+      p: 2,
    },
    { verticalAlign: 'top' },
    'width',
