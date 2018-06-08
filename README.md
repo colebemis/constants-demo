@@ -1,10 +1,11 @@
-# gatsby-starter-hello-world
-Starter with the bare essentials needed for a [Gatsby](https://www.gatsbyjs.org/) site
+# iFixit Style Constants
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
-```
-gatsby new gatsby-site https://github.com/gatsbyjs/gatsby-starter-hello-world
-```
+This site documents the style `constants` made available by [Toolbox](https://github.com/iFixit/toolbox/tree/master/src/constants). We use style constants in place of hard-coded values (such as hex values for color, or pixel values for spacing) in order to maintain a scalable and consistent visual system for UI development.
 
-## Running in development
-`gatsby develop`
+*https://constants-demo.netlify.com/*
+
+## Run development server
+`npm run develop`
+
+## Deploying
+Netlify is set up to deploy all changes to the `master` branch. To deploy, simply push to `master`.
