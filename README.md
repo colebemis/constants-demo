@@ -4,8 +4,18 @@ This site documents the style `constants` made available by [Toolbox](https://gi
 
 *https://constants-demo.netlify.com/*
 
-## Run development server
-```
+## Project Setup
+```shell
+# Clone the repo
+git clone https://github.com/colebemis/constants-demo.git
+
+# Open the project directory
+cd constants-demo
+
+# Install dependencies
+npm install
+
+# Run local developement server
 npm run develop
 ```
 
