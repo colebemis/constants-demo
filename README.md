@@ -5,7 +5,9 @@ This site documents the style `constants` made available by [Toolbox](https://gi
 *https://constants-demo.netlify.com/*
 
 ## Run development server
-`npm run develop`
+```
+npm run develop
+```
 
 ## Deploying
 Netlify is set up to deploy all changes to the `master` branch. To deploy, simply push to `master`.
